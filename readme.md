@@ -40,6 +40,13 @@ Test Set：F1-score 	0.317135
 
 ## 執行指令
 
+### 環境建置
+```bash
+# 使用 conda 創建 Python 3.11 環境
+conda create -n esun python=3.11
+conda activate esun
+pip install -r requirements.txt 
+```
 ###  方法一
 ```bash
 # Step 1: EDA
