@@ -27,14 +27,17 @@ Test Set：F1-score 	0.317135
 │   ├── acct_transaction.csv             # 交易資料
 │   ├── acct_alert.csv                   # 警示帳戶清單
 │   └── acct_predict.csv                 # 待預測帳戶清單
-├── features_enhanced/                   # 生成的特徵檔案（自動生成）
-│   └── features_enhanced_v1.csv         # 完整特徵集
-├── submissions/                         # 提交檔案（自動生成）
+├── features/                            # 生成的特徵檔案
+│   ├── pagerank_scores.csv              # pagerank 的計算結果
+│   └── features.csv                     # 完整特徵集
+├── submissions/                         # 提交檔案
+│   ├── feature_importance.csv           # 各個 features 重要性計算結果
 │   └── submission_YYYYMMDD_HHMMSS.csv   # 預測結果
+│
+├── visualizations/                      # 存放 EDA 結果
 ├── main.py                              # 主執行程式
 ├── requirements.txt                     # Python套件需求
-├── .gitignore                          # Git忽略清單
-└── README.md                           # 本說明文件
+└── README.md                            # 本說明文件
 ```
 
 
