@@ -17,8 +17,8 @@ print("Step 1: 檢查環境")
 print("="*80)
 
 required_files = [
-    'step2.py',
-    'step3.py'
+    'Preprocess/feature_engineering.py',
+    'Model/model_training.py'
 ]
 
 data_files = []
@@ -64,27 +64,27 @@ if os.path.exists(feature_file):
     if response != 'y':
         print("跳過特徵生成")
     else:
-        print("\n執行 step2.py...")
+        print("\n執行 feature_engineering.py...")
         start_time = time.time()
-        result = subprocess.run(['python', 'step2.py'], capture_output=False)
+        result = subprocess.run(['python', 'Preprocess/feature_engineering.py'], capture_output=False)
         elapsed = time.time() - start_time
         
         if result.returncode != 0:
-            print("step2.py 執行失敗")
+            print("feature_engineering.py 執行失敗")
             sys.exit(1)
         
-        print(f"✓ step2.py 完成 (耗時: {elapsed/60:.1f} 分鐘)")
+        print(f"✓ feature_engineering.py 完成 (耗時: {elapsed/60:.1f} 分鐘)")
 else:
-    print("\n執行 step2.py...")
+    print("\n執行 feature_engineering.py...")
     start_time = time.time()
-    result = subprocess.run(['python', 'step2.py'], capture_output=False)
+    result = subprocess.run(['python', 'Preprocess/feature_engineering.py'], capture_output=False)
     elapsed = time.time() - start_time
     
     if result.returncode != 0:
-        print("step2.py 執行失敗")
+        print("feature_engineering.py 執行失敗")
         sys.exit(1)
     
-    print(f"✓ step2.py 完成 (耗時: {elapsed/60:.1f} 分鐘)")
+    print(f"✓ feature_engineering.py 完成 (耗時: {elapsed/60:.1f} 分鐘)")
 
 # 檢查特徵檔案
 if not os.path.exists(feature_file):
@@ -101,16 +101,16 @@ print("\n" + "="*80)
 print("Step 3: 模型訓練與預測")
 print("="*80)
 
-print("\n執行 step3.py...")
+print("\n執行 model_training.py...")
 start_time = time.time()
-result = subprocess.run(['python', 'step3.py'], capture_output=False)
+result = subprocess.run(['python', 'Model/model_training.py'], capture_output=False)
 elapsed = time.time() - start_time
 
 if result.returncode != 0:
-    print("step3.py 執行失敗")
+    print("model_training.py 執行失敗")
     sys.exit(1)
 
-print(f"✓ step3.py 完成 (耗時: {elapsed/60:.1f} 分鐘)")
+print(f"✓ model_training.py 完成 (耗時: {elapsed/60:.1f} 分鐘)")
 
 # ============================================================================
 # 總結
