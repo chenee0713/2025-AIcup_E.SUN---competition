@@ -37,7 +37,8 @@ Test Set：F1-score 	0.317135
 ├── visualizations/                      # 存放 EDA 結果
 ├── main.py                              # 主執行程式
 ├── requirements.txt                     # Python套件需求
-└── README.md                            # 本說明文件
+├── config.md                            # 超參數相關說明
+└── readme.md                            # 本說明文件
 ```
 
 
